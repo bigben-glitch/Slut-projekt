@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thinky Winky</title>
+    <link rel="stylesheet" href="SlutProjekt.css">
+</head>
+
+<body>
+
+    <img src="IMG/logo.png" id="logo" alt="logo">
+
+    <header>
+        <h1>Thinky</h1>
+        <h2>Winky</h2>
+    </header>
+
+    <div class="line"></div>
+
+    <div id="Kategori">
+        <a href="#"><img src="IMG/football.png" class="Kategori" id="btnSport" alt="btnSport"></a>
+        <a href="#"><img src="IMG/Geography.png" class="Kategori" id="btnGeography" alt="btnGeography"></a>
+        <a href="#"><img src="IMG/History.png" class="Kategori" id="btnHistory" alt="btnHistory"></a>
+        <a href="#"><img src="IMG/commonKnowledge.png" class="Kategori" id="btnCommon" alt="btnCommon"></a>
+    </div>
+
+    <div class="sport">
+        <a href="sportEasy.html"><div class="container"><img src="IMG/easySport.png" alt="easySport"><span>EASY</span></div></a>
+        <a href="sportMedium.html"><div class="container"><img src="IMG/mediumSport.png" alt="mediumSport"><span>MEDIUM</span></div></a>
+        <a href="sportHard.html"><div class="container"><img src="IMG/hardSport.png" alt="hardSport"><span>HARD</span></div></a>
+    </div>
+
+    <div class="Geography">
+        <a href="geographyEasy.html"><div class="container"><img src="IMG/easyGeography.png" alt="easyGeography"><span>EASY</span></div></a>
+        <a href="geographyMedium.html"><div class="container"><img src="IMG/mediumGeography.png" alt="mediumGeography"><span>MEDIUM</span></div></a>
+        <a href="geographyHard.html"><div class="container"><img src="IMG/hardGeography.png" alt="hardGeography"><span>HARD</span></div></a>
+    </div>
+
+    <div class="History">
+        <a href="historyEasy.html"><div class="container"><img src="IMG/easyHistory.png" alt="easyHistory"><span>EASY</span></div></a>
+        <a href="historyMedium.html"><div class="container"><img src="IMG/mediumHistory.png" alt="mediumHistory"><span>MEDIUM</span></div></a>
+        <a href="historyHard.html"><div class="container"><img src="IMG/hardHistory.png" alt="hardHistory"><span>HARD</span></div></a>
+    </div>
+
+    <div class="commonKnowledge">
+        <a href="commonEasy.html"><div class="container"><img src="IMG/easyCommonKnowlegde.png" alt="easyCommonKnowlegde"><span>EASY</span></div></a>
+        <a href="commonMedium.html"><div class="container"><img src="IMG/mediumCommonKnowledge.png" alt="mediumCommonKnowledge"><span>MEDIUM</span></div></a>
+        <a href="commonhard.html"><div class="container"><img src="IMG/hardCommonKnowledge.png" alt="hardCommonKnowledge"><span>HARD</span></div></a>
+    </div>
+
+    <script>
+
+    // Kopplar knappar till olika sektioner
+    const sections = {
+        btnSport: '.sport',
+        btnGeography: '.Geography',
+        btnHistory: '.History',
+        btnCommon: '.commonKnowledge'
+    };
+
+    // Gömmer alla sektioner
+    function hideAll() {
+        Object.values(sections).forEach(selector => {
+            document.querySelector(selector).style.display = 'none';
+        });
+    }
+
+    // Lägger click-event på alla knappar
+    Object.keys(sections).forEach(buttonId => {
+
+        // Körs när man klickar på en knapp
+        document.getElementById(buttonId).addEventListener('click', function(e) {
+
+            // Stoppar sidan från att laddas om
+            e.preventDefault();
+
+            // Gömmer alla sektioner
+            hideAll();
+
+            // Visar rätt sektion
+            document.querySelector(sections[buttonId]).style.display = 'flex';
+        });
+    });
+
+</script>
+
+</body>
+</html>

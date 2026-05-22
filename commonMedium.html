@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium CommonKnowledge</title>
+    <link rel="stylesheet" href="sportEasy.css">
+</head>
+<body>
+
+<section id="q1">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>1. Which planet in our solar system has the most moons?</h1>
+        <p class="answer">Mars</p>
+        <p class="answer">Neptune</p>
+        <p class="answer correct">Saturn</p>
+        <p class="answer">Venus</p>
+        <a href="#q2" class="next-btn">Next Question</a>
+    </div>
+</section>
+
+<section id="q2">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>2. What is the rarest naturally occurring blood type in humans?</h1>
+        <p class="answer">O Negative</p>
+        <p class="answer">A Positive</p>
+        <p class="answer">B Negative</p>
+        <p class="answer correct">AB Negative</p>
+        <a href="#q3" class="next-btn">Next Question</a>
+        <a href="#q1" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q3">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>3. Which ocean is the deepest in the world?</h1>
+        <p class="answer">Atlantic Ocean</p>
+        <p class="answer">Indian Ocean</p>
+        <p class="answer correct">Pacific Ocean</p>
+        <p class="answer">Arctic Ocean</p>
+        <a href="#q4" class="next-btn">Next Question</a>
+        <a href="#q2" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q4">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>4. Who wrote the famous play "Romeo and Juliet"?</h1>
+        <p class="answer">Charles Dickens</p>
+        <p class="answer correct">William Shakespeare</p>
+        <p class="answer">Mark Twain</p>
+        <p class="answer">Jane Austen</p>
+        <a href="#q5" class="next-btn">Next Question</a>
+        <a href="#q3" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q5">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>5. What is the hardest natural substance known on Earth?</h1>
+        <p class="answer">Steel</p>
+        <p class="answer">Graphene</p>
+        <p class="answer correct">Diamond</p>
+        <p class="answer">Titanium</p>
+        <a href="#q6" class="next-btn">Next Question</a>
+        <a href="#q4" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q6">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>6. In which country would you find the ancient ruins of Machu Picchu?</h1>
+        <p class="answer correct">Peru</p>
+        <p class="answer">Mexico</p>
+        <p class="answer">Colombia</p>
+        <p class="answer">Egypt</p>
+        <a href="#q7" class="next-btn">Next Question</a>
+        <a href="#q5" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q7">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>7. What is the primary chemical element that makes up the diamond?</h1>
+        <p class="answer correct">Carbon</p>
+        <p class="answer">Silicon</p>
+        <p class="answer">Oxygen</p>
+        <p class="answer">Iron</p>
+        <a href="#q8" class="next-btn">Next Question</a>
+        <a href="#q6" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q8">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>8. Which empire built the Colosseum in Rome?</h1>
+        <p class="answer correct">The Roman Empire</p>
+        <p class="answer">The Greek Empire</p>
+        <p class="answer">The Persian Empire</p>
+        <p class="answer">The Byzantine Empire</p>
+        <a href="#q9" class="next-btn">Next Question</a>
+        <a href="#q7" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q9">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>9. What is the capital city of Australia?</h1>
+        <p class="answer">Sydney</p>
+        <p class="answer">Melbourne</p>
+        <p class="answer correct">Canberra</p>
+        <p class="answer">Brisbane</p>
+        <a href="#q10" class="next-btn">Next Question</a>
+        <a href="#q8" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q10">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>10. Which gas do plants primarily absorb from the atmosphere during photosynthesis?</h1>
+        <p class="answer">Oxygen</p>
+        <p class="answer correct">Carbon Dioxide</p>
+        <p class="answer">Nitrogen</p>
+        <p class="answer">Hydrogen</p>
+        <a href="#" class="next-btn" id="submitBtn">Submit</a>
+        <a href="#q9" class="next-btn">Back</a>
+    </div>
+</section>
+
+<div id="resultScreen" style="display: none;">
+    <h1>Your Score</h1>
+    <p id="scoreText"></p>
+    <a href="SlutProjekt.html" class="next-btn">Back to Start</a>
+    <button id="restartBtn">Play Again</button>
+</div>
+
+<script>
+    const TIME_LIMIT = 15;
+    let timerInterval = null;
+    let currentSeconds = TIME_LIMIT;
+    const sections = document.querySelectorAll('section');
+
+    // Answer click selections
+    document.querySelectorAll('.answer').forEach(answer => {
+        answer.addEventListener('click', function() {
+            if (this.closest('section').classList.contains('timed-out')) return;
+            
+            const siblings = this.parentElement.querySelectorAll('.answer');
+            siblings.forEach(el => el.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+
+    // Countdown Timer System
+    function startTimer(section) {
+        clearInterval(timerInterval);
+        
+        if (section.classList.contains('timed-out')) {
+            const displayElement = section.querySelector('.time-left');
+            if (displayElement) displayElement.innerText = "0";
+            return;
+        }
+
+        currentSeconds = TIME_LIMIT;
+        const displayElement = section.querySelector('.time-left');
+        if (!displayElement) return;
+        
+        displayElement.innerText = currentSeconds;
+
+        timerInterval = setInterval(() => {
+            currentSeconds--;
+            displayElement.innerText = currentSeconds;
+
+            if (currentSeconds <= 0) {
+                clearInterval(timerInterval);
+                handleTimeout(section);
+            }
+        }, 1000);
+    }
+
+    function handleTimeout(section) {
+        section.classList.add('timed-out');
+        
+        const selected = section.querySelector('.selected');
+        if (selected) selected.classList.remove('selected');
+
+        const nextBtn = section.querySelector('.next-btn');
+        if (nextBtn) {
+            nextBtn.click();
+        }
+    }
+
+    // Connect page navigations to reset/restart timers
+    document.querySelectorAll('.next-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const nextSection = document.querySelector(targetId);
+                if (nextSection) {
+                    setTimeout(() => startTimer(nextSection), 50);
+                }
+            }
+        });
+    });
+
+    // Run when application initializes
+    window.addEventListener('DOMContentLoaded', () => {
+        if (sections.length > 0) {
+            startTimer(sections[0]);
+        }
+    });
+
+    // Handle submit scoring and generate dynamic feedback container
+    document.getElementById('submitBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        clearInterval(timerInterval);
+
+        let score = 0;
+        let reviewHtml = ""; 
+
+        sections.forEach((section, index) => {
+            const questionText = section.querySelector('h1').innerText;
+            const selected = section.querySelector('.selected');
+            const correctBtn = section.querySelector('.correct');
+            
+            let userChoiceText = "No answer selected";
+            if (section.classList.contains('timed-out')) {
+                userChoiceText = "No answer selected (Timed Out)";
+            } else if (selected) {
+                userChoiceText = selected.innerText;
+            }
+            
+            let isCorrect = !section.classList.contains('timed-out') && selected && selected.classList.contains('correct');
+            if (isCorrect) score++;
+
+            reviewHtml += `
+                <div class="review-item">
+                    <span class="review-question">Question ${index + 1}: ${questionText}</span>
+                    <div class="review-result ${isCorrect ? 'was-correct' : 'was-wrong'}">
+                        ${isCorrect ? '✓' : '✗'} Your answer: ${userChoiceText}
+                    </div>
+                    ${!isCorrect ? `<div class="review-result was-correct">Correct answer: ${correctBtn.innerText}</div>` : ''}
+                </div>
+            `;
+        });
+
+        document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+        const resultScreen = document.getElementById('resultScreen');
+        
+        resultScreen.innerHTML = `
+            <h1>Quiz Results</h1>
+            <h2 id="scoreText" style="font-size: 2rem; margin-bottom: 20px;">Score: ${score} / 10</h2>
+            
+            <div id="reviewContainer" style="width: 100%; max-width: 500px; margin-bottom: 20px;">
+                ${reviewHtml}
+            </div>
+
+            <div class="button-group">
+                <a href="SlutProjekt.html" class="next-btn">Back to Start</a>
+                <button id="restartBtn" class="next-btn" onclick="location.reload()">Play Again</button>
+            </div>
+        `;
+
+        resultScreen.style.display = 'flex';
+        resultScreen.style.flexDirection = 'column';
+        resultScreen.style.alignItems = 'center';
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+body {
+    background-color: #C7AE8D;
+    font-family: -apple-system, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+/* Gör olika sectioner */
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* diven för answers */
+.text {
+    width: 90%;
+    max-width: 80vh;
+    text-align: center;
+}
+
+h1 {
+    color: #4B3B2B;
+    font-size: 4vh;
+    margin-bottom: 3vh;
+}
+/* gör så att svaren visas i en grid */
+.answers-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5vh;
+    margin-bottom: 3vh;
+}
+/* ändrar hur svaren visas */
+.answer {
+    background: #d8b381;
+    border-radius: 1.5vh;
+    cursor: pointer;
+    overflow: hidden;
+    height: 35vh;
+    display: flex;
+    border: 0.6vh solid transparent;
+    transition: 0.2s;
+}
+/* bildinställningar */
+.answer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+/* ändrar bilden när man hovrar */
+.answer:hover {
+    background: #c9a06d;
+    transform: scale(1.02);
+}
+/* vald svar */
+.selected {
+    border-color: #4B3B2B;
+}
+/* knappen för att komma till nästa section */
+.next-btn {
+    display: inline-block;
+    background: #4B3B2B;
+    color: white;
+    padding: 1.5vh 4vh;
+    font-size: 2.5vh;
+    text-decoration: none;
+    border-radius: 1vh;
+    border: none;
+    cursor: pointer;
+    margin: 0.5vh;
+}
+/* Navigationsknappar */
+.nav-btns {
+    display: flex;
+    justify-content: center;
+}
+/* skärmen efter man tryckt på submit */
+#resultScreen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #C7AE8D;
+    z-index: 9999;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding: 4vh 1vh;
+    box-sizing: border-box;
+}
+
+#scoreText {
+    font-size: 4vh;
+    font-weight: bold;
+    color: #4B3B2B;
+    margin-bottom: 2vh;
+}
+#reviewList {
+    width: 100%;
+    max-width: 50vh;
+}
+
+.review-item {
+    background: #d8b381;
+    margin-bottom: 1vh;
+    padding: 1.5vh;
+    border-radius: 1.2vh;
+    border-left: 0.8vh solid #4B3B2B;
+    text-align: left;
+}
+/* Visar svarens bilder */
+.review-thumb {
+    width: 5vh;
+    height: 5vh;
+    object-fit: cover;
+    border-radius: 0.5vh;
+    vertical-align: middle;
+    margin-left: 1vh;
+    border: 0.2vh solid #4B3B2B;
+}
+/* visar det korrekta svaret och om du svara fel */
+.was-correct { color: #1e5621; font-weight: bold; margin: 0.5vh 0; }
+.was-wrong { color: #8b0000; font-weight: bold; margin: 0.5vh 0; }
+
+.button-group {
+    display: flex;
+    margin-top: 2vh;
+    padding-bottom: 4vh;
+}
+
+/* responsiv layout */
+@media (max-width: 60vh) {
+    .answers-container { 
+        grid-template-columns: 1fr; 
+        gap: 1vh;
+    }
+    
+    .answer { 
+        height: 17vh; 
+    }
+
+    h1 {
+        font-size: 3vh;
+    }
+
+    .next-btn {
+        padding: 1vh 3vh;
+        font-size: 2vh;
+    }
+}
+
+@media (max-height: 50vh) {
+    .answer {
+        height: 25vh;
+    }
+    h1 {
+        font-size: 5vh;
+        margin-bottom: 1vh;
+    }
+}

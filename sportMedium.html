@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medium Sport</title>
+    <link rel="stylesheet" href="sportEasy.css">
+</head>
+<body>
+
+    <section id="q1">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>1. Which country hosted the FIFA World Cup in 2010?</h1>
+            <p class="answer">Brazil</p>
+            <p class="answer correct">South Africa</p>
+            <p class="answer">Germany</p>
+            <p class="answer">Spain</p>
+            <a href="#q2" class="next-btn">Next Question</a>
+        </div>
+    </section>
+
+    <section id="q2">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>2. How long is one quarter in NBA basketball?</h1>
+            <p class="answer">10 minutes</p>
+            <p class="answer correct">12 minutes</p>
+            <p class="answer">15 minutes</p>
+            <p class="answer">20 minutes</p>
+            <a href="#q3" class="next-btn">Next Question</a>
+            <a href="#q1" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <section id="q3">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>3. In tennis, what is the score called when both players are 40–40?</h1>
+            <p class="answer">Advantage</p>
+            <p class="answer correct">Deuce</p>
+            <p class="answer">Tie</p>
+            <p class="answer">Break</p>
+            <a href="#q4" class="next-btn">Next Question</a>
+            <a href="#q2" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <section id="q4">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>4. Which sport uses the term “eagle”?</h1>
+            <p class="answer">Cricket</p>
+            <p class="answer correct">Golf</p>
+            <p class="answer">Tennis</p>
+            <p class="answer">Rugby</p>
+            <a href="#q5" class="next-btn">Next Question</a>
+            <a href="#q3" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <section id="q5">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>5. How many players are on an ice hockey team on the ice?</h1>
+            <p class="answer">5</p>
+            <p class="answer correct">6</p>
+            <p class="answer">7</p>
+            <p class="answer">11</p>
+            <a href="#q6" class="next-btn">Next Question</a>
+            <a href="#q4" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <section id="q6">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>6. What country invented modern football (soccer rules)?</h1>
+            <p class="answer correct">England</p>
+            <p class="answer">Spain</p>
+            <p class="answer">Brazil</p>
+            <p class="answer">Italy</p>
+            <a href="#q7" class="next-btn">Next Question</a>
+            <a href="#q5" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <section id="q7">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>7. In Formula 1, what does “pole position” mean?</h1>
+            <p class="answer">Last place</p>
+            <p class="answer correct">First place on the grid</p>
+            <p class="answer">Fastest pit stop</p>
+            <p class="answer">Winning the race</p>
+            <a href="#q8" class="next-btn">Next Question</a>
+            <a href="#q6" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <section id="q8">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>8. Which sport has positions called “prop” and “scrum-half”?</h1>
+            <p class="answer">Football</p>
+            <p class="answer correct">Rugby</p>
+            <p class="answer">Cricket</p>
+            <p class="answer">Basketball</p>
+            <a href="#q9" class="next-btn">Next Question</a>
+            <a href="#q7" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <section id="q9">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>9. What is the maximum number of clubs a golfer is allowed to carry?</h1>
+            <p class="answer">12</p>
+            <p class="answer">16</p>
+            <p class="answer correct">14</p>
+            <p class="answer">18</p>
+            <a href="#q10" class="next-btn">Next Question</a>
+            <a href="#q8" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <section id="q10">
+        <div class="text">
+            <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+            <h1>10. Which country has most World Cups?</h1>
+            <p class="answer correct">Brazil</p>
+            <p class="answer">Germany</p>
+            <p class="answer">Italy</p>
+            <p class="answer">Argentina</p>
+            <a href="#" class="next-btn" id="submitBtn">Submit</a>
+            <a href="#q9" class="next-btn">Back</a>
+        </div>
+    </section>
+
+    <div id="resultScreen" style="display: none;">
+        <h1>Your Score</h1>
+        <p id="scoreText"></p>
+    </div>
+
+    <script>
+        const TIME_LIMIT = 15;
+        let timerInterval = null;
+        let currentSeconds = TIME_LIMIT;
+        const sections = document.querySelectorAll('section');
+
+        // Manage selection
+        document.querySelectorAll('.answer').forEach(answer => {
+            answer.addEventListener('click', function() {
+                if (this.closest('section').classList.contains('timed-out')) return;
+                
+                const siblings = this.parentElement.querySelectorAll('.answer');
+                siblings.forEach(el => el.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Timer core engine
+        function startTimer(section) {
+            clearInterval(timerInterval);
+            
+            if (section.classList.contains('timed-out')) {
+                const displayElement = section.querySelector('.time-left');
+                if (displayElement) displayElement.innerText = "0";
+                return;
+            }
+
+            currentSeconds = TIME_LIMIT;
+            const displayElement = section.querySelector('.time-left');
+            if (!displayElement) return;
+            
+            displayElement.innerText = currentSeconds;
+
+            timerInterval = setInterval(() => {
+                currentSeconds--;
+                displayElement.innerText = currentSeconds;
+
+                if (currentSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    handleTimeout(section);
+                }
+            }, 1000);
+        }
+
+        function handleTimeout(section) {
+            section.classList.add('timed-out');
+            
+            const selected = section.querySelector('.selected');
+            if (selected) selected.classList.remove('selected');
+
+            const nextBtn = section.querySelector('.next-btn');
+            if (nextBtn) {
+                nextBtn.click();
+            }
+        }
+
+        // Connect question navigation buttons
+        document.querySelectorAll('.next-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const nextSection = document.querySelector(targetId);
+                    if (nextSection) {
+                        setTimeout(() => startTimer(nextSection), 50);
+                    }
+                }
+            });
+        });
+
+        // Initialize quiz on load
+        window.addEventListener('DOMContentLoaded', () => {
+            if (sections.length > 0) {
+                startTimer(sections[0]);
+            }
+        });
+
+        // Submit button handling & final score view conversion
+        document.getElementById('submitBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            clearInterval(timerInterval);
+
+            let score = 0;
+            let reviewHtml = ""; 
+
+            sections.forEach((section, index) => {
+                const questionText = section.querySelector('h1').innerText;
+                const selected = section.querySelector('.selected');
+                const correctBtn = section.querySelector('.correct');
+                
+                let userChoiceText = "No answer selected";
+                if (section.classList.contains('timed-out')) {
+                    userChoiceText = "No answer selected (Timed Out)";
+                } else if (selected) {
+                    userChoiceText = selected.innerText;
+                }
+                
+                let isCorrect = !section.classList.contains('timed-out') && selected && selected.classList.contains('correct');
+                if (isCorrect) score++;
+
+                reviewHtml += `
+                    <div class="review-item">
+                        <span class="review-question">Question ${index + 1}: ${questionText}</span>
+                        <div class="review-result ${isCorrect ? 'was-correct' : 'was-wrong'}">
+                            ${isCorrect ? '✓' : '✗'} Your answer: ${userChoiceText}
+                        </div>
+                        ${!isCorrect ? `<div class="review-result was-correct">Correct answer: ${correctBtn.innerText}</div>` : ''}
+                    </div>
+                `;
+            });
+
+            document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+            const resultScreen = document.getElementById('resultScreen');
+            
+            resultScreen.innerHTML = `
+                <h1>Quiz Results</h1>
+                <h2 id="scoreText" style="font-size: 2rem; margin-bottom: 20px;">Score: ${score} / 10</h2>
+                
+                <div id="reviewContainer" style="width: 100%; max-width: 500px; margin-bottom: 20px;">
+                    ${reviewHtml}
+                </div>
+
+                <div class="button-group">
+                    <a href="SlutProjekt.html" class="next-btn">Back to Start</a>
+                    <button id="restartBtn" class="next-btn" onclick="location.reload()">Play Again</button>
+                </div>
+            `;
+
+            resultScreen.style.display = 'flex';
+            resultScreen.style.flexDirection = 'column';
+            resultScreen.style.alignItems = 'center';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy CommonKnowledge</title>
+    <link rel="stylesheet" href="sportEasy.css">
+</head>
+<body>
+
+<section id="q1">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>1. What color do you get when you mix blue and yellow?</h1>
+        <p class="answer correct">Green</p>
+        <p class="answer">Purple</p>
+        <p class="answer">Orange</p>
+        <p class="answer">Pink</p>
+        <a href="#q2" class="next-btn">Next Question</a>
+    </div>
+</section>
+
+<section id="q2">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>2. How many days are there in a normal year?</h1>
+        <p class="answer">300</p>
+        <p class="answer">350</p>
+        <p class="answer">360</p>
+        <p class="answer correct">365</p>
+        <a href="#q3" class="next-btn">Next Question</a>
+        <a href="#q1" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q3">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>3. Which planet is closest to the Sun?</h1>
+        <p class="answer">Mars</p>
+        <p class="answer">Venus</p>
+        <p class="answer correct">Mercury</p>
+        <p class="answer">Jupiter</p>
+        <a href="#q4" class="next-btn">Next Question</a>
+        <a href="#q2" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q4">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>4. What is the capital city of France?</h1>
+        <p class="answer">London</p>
+        <p class="answer correct">Paris</p>
+        <p class="answer">Rome</p>
+        <p class="answer">Berlin</p>
+        <a href="#q5" class="next-btn">Next Question</a>
+        <a href="#q3" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q5">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>5. What animal is known as the "King of the Jungle"?</h1>
+        <p class="answer">Tiger</p>
+        <p class="answer">Elephant</p>
+        <p class="answer correct">Lion</p>
+        <p class="answer">Bear</p>
+        <a href="#q6" class="next-btn">Next Question</a>
+        <a href="#q4" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q6">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>6. How many oceans are there on Earth?</h1>
+        <p class="answer correct">5</p>
+        <p class="answer">3</p>
+        <p class="answer">7</p>
+        <p class="answer">10</p>
+        <a href="#q7" class="next-btn">Next Question</a>
+        <a href="#q5" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q7">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>7. What frozen liquid is ice made from?</h1>
+        <p class="answer correct">Water</p>
+        <p class="answer">Milk</p>
+        <p class="answer">Juice</p>
+        <p class="answer">Soda</p>
+        <a href="#q8" class="next-btn">Next Question</a>
+        <a href="#q6" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q8">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>8. Which of these animals can fly?</h1>
+        <p class="answer correct">Bat</p>
+        <p class="answer">Dog</p>
+        <p class="answer">Frog</p>
+        <p class="answer">Rabbit</p>
+        <a href="#q9" class="next-btn">Next Question</a>
+        <a href="#q7" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q9">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>9. What is the largest mammal in the world?</h1>
+        <p class="answer correct">Blue Whale</p>
+        <p class="answer">African Elephant</p>
+        <p class="answer">Giraffe</p>
+        <p class="answer">Shark</p>
+        <a href="#q10" class="next-btn">Next Question</a>
+        <a href="#q8" class="next-btn">Back</a>
+    </div>
+</section>
+
+<section id="q10">
+    <div class="text">
+        <div class="timer-display">Time Left: <span class="time-left">15</span>s</div>
+        <h1>10. Who was the first person to walk on the Moon?</h1>
+        <p class="answer">Albert Einstein</p>
+        <p class="answer correct">Neil Armstrong</p>
+        <p class="answer">Elon Musk</p>
+        <p class="answer">Isaac Newton</p>
+        <a href="#" class="next-btn" id="submitBtn">Submit</a>
+        <a href="#q9" class="next-btn">Back</a>
+    </div>
+</section>
+
+<div id="resultScreen" style="display: none;">
+    <h1>Your Score</h1>
+    <p id="scoreText"></p>
+    <a href="SlutProjekt.html" class="next-btn">Back to Start</a>
+    <button id="restartBtn">Play Again</button>
+</div>
+
+<script>
+    const TIME_LIMIT = 15;
+    let timerInterval = null;
+    let currentSeconds = TIME_LIMIT;
+    const sections = document.querySelectorAll('section');
+
+    // Answer click selections
+    document.querySelectorAll('.answer').forEach(answer => {
+        answer.addEventListener('click', function() {
+            if (this.closest('section').classList.contains('timed-out')) return;
+            
+            const siblings = this.parentElement.querySelectorAll('.answer');
+            siblings.forEach(el => el.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+
+    // Countdown Timer System
+    function startTimer(section) {
+        clearInterval(timerInterval);
+        
+        if (section.classList.contains('timed-out')) {
+            const displayElement = section.querySelector('.time-left');
+            if (displayElement) displayElement.innerText = "0";
+            return;
+        }
+
+        currentSeconds = TIME_LIMIT;
+        const displayElement = section.querySelector('.time-left');
+        if (!displayElement) return;
+        
+        displayElement.innerText = currentSeconds;
+
+        timerInterval = setInterval(() => {
+            currentSeconds--;
+            displayElement.innerText = currentSeconds;
+
+            if (currentSeconds <= 0) {
+                clearInterval(timerInterval);
+                handleTimeout(section);
+            }
+        }, 1000);
+    }
+
+    function handleTimeout(section) {
+        section.classList.add('timed-out');
+        
+        const selected = section.querySelector('.selected');
+        if (selected) selected.classList.remove('selected');
+
+        const nextBtn = section.querySelector('.next-btn');
+        if (nextBtn) {
+            nextBtn.click();
+        }
+    }
+
+    // Connect page navigations to reset/restart timers
+    document.querySelectorAll('.next-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const nextSection = document.querySelector(targetId);
+                if (nextSection) {
+                    setTimeout(() => startTimer(nextSection), 50);
+                }
+            }
+        });
+    });
+
+    // Run when application initializes
+    window.addEventListener('DOMContentLoaded', () => {
+        if (sections.length > 0) {
+            startTimer(sections[0]);
+        }
+    });
+
+    // Handle submit scoring and generate dynamic feedback container
+    document.getElementById('submitBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        clearInterval(timerInterval);
+
+        let score = 0;
+        let reviewHtml = ""; 
+
+        sections.forEach((section, index) => {
+            const questionText = section.querySelector('h1').innerText;
+            const selected = section.querySelector('.selected');
+            const correctBtn = section.querySelector('.correct');
+            
+            let userChoiceText = "No answer selected";
+            if (section.classList.contains('timed-out')) {
+                userChoiceText = "No answer selected (Timed Out)";
+            } else if (selected) {
+                userChoiceText = selected.innerText;
+            }
+            
+            let isCorrect = !section.classList.contains('timed-out') && selected && selected.classList.contains('correct');
+            if (isCorrect) score++;
+
+            reviewHtml += `
+                <div class="review-item">
+                    <span class="review-question">Question ${index + 1}: ${questionText}</span>
+                    <div class="review-result ${isCorrect ? 'was-correct' : 'was-wrong'}">
+                        ${isCorrect ? '✓' : '✗'} Your answer: ${userChoiceText}
+                    </div>
+                    ${!isCorrect ? `<div class="review-result was-correct">Correct answer: ${correctBtn.innerText}</div>` : ''}
+                </div>
+            `;
+        });
+
+        document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+        const resultScreen = document.getElementById('resultScreen');
+        
+        resultScreen.innerHTML = `
+            <h1>Quiz Results</h1>
+            <h2 id="scoreText" style="font-size: 2rem; margin-bottom: 20px;">Score: ${score} / 10</h2>
+            
+            <div id="reviewContainer" style="width: 100%; max-width: 500px; margin-bottom: 20px;">
+                ${reviewHtml}
+            </div>
+
+            <div class="button-group">
+                <a href="SlutProjekt.html" class="next-btn">Back to Start</a>
+                <button id="restartBtn" class="next-btn" onclick="location.reload()">Play Again</button>
+            </div>
+        `;
+
+        resultScreen.style.display = 'flex';
+        resultScreen.style.flexDirection = 'column';
+        resultScreen.style.alignItems = 'center';
+    });
+</script>
+
+</body>
+</html>
